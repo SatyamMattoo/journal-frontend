@@ -27,7 +27,7 @@ const ForgotPassword = () => {
         <Loader />
       ) : (
         <section className="h-screen m-5 flex justify-center items-center flex-col">
-          <div className="conatiner mx-auto flex justify-center items-center card-gradient w-full md:w-1/2 rounded-lg">
+          <div className=" mx-auto flex justify-center items-center card-gradient w-full lg:w-1/2 rounded-lg">
             <form
               method="POST"
               onSubmit={handleSubmit}

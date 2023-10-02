@@ -17,7 +17,6 @@ const Submission = () => {
   }
   const onSubmit = async (data) => {
     try {
-      console.log(data);
       // Create a new FormData instance
       const formDataInstance = new FormData();
       formDataInstance.append("title", title);
