@@ -47,11 +47,7 @@ const AdminDashboard = () => {
     refetch: refetchAnnouncement,
   } = useGetAnnouncementQuery();
 
-  let editor,
-    readyArticles,
-    sortedReadyArticles,
-    sortedArticles,
-    announcement;
+  let editor, readyArticles, sortedReadyArticles, sortedArticles, announcement;
 
   if (editorSuccess) {
     editor = editorData.editors || [];
@@ -242,7 +238,7 @@ const AdminDashboard = () => {
                 <h1 className="text-center text-2xl">Announcements</h1>
               </div>
               <div className="flex flex-wrap w-[90%] items-center m-10">
-                {announcement ? (
+                {announcement.length > 0 ? (
                   announcement.map((item, index) => (
                     <div key={index} className="flex flex-col m-2">
                       <Card
@@ -270,7 +266,9 @@ const AdminDashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <p>Loading announcements...</p>
+                  <div className="p-4 m-2 card-gradient">
+                    <h1 className="text-3xl">No Announcements</h1>
+                  </div>
                 )}
                 <button
                   className="p-4 bg-secondary hover:bg-primary m-2 rounded-full"
