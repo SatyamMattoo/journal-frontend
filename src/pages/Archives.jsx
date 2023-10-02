@@ -26,7 +26,7 @@ const Archives = () => {
               Articles
             </h1>
             <div className="flex flex-wrap m-2">
-              {sortedArticles ? (
+              {sortedArticles.length > 0 ? (
                 sortedArticles.map((item, index) => {
                   return (
                     <Card
