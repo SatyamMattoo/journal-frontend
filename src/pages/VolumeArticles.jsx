@@ -17,7 +17,7 @@ const VolumeArticles = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  let articles, sortedArticles;
+  let articles=[], sortedArticles=[];
   if (isSuccess) {
     articles = data.articles || [];
     sortedArticles = [...(articles || [])];

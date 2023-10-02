@@ -33,13 +33,13 @@ const Home = () => {
     refetch: refetchAnnouncement,
   } = useGetAnnouncementQuery();
 
-  let sortedVolumes;
+  let sortedVolumes=[];
   if (volumeSuccess) {
     sortedVolumes = [...(volumesData.volumes || [])];
     sortedVolumes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
 
-  let sortedArticles;
+  let sortedArticles=[];
   if (articlesSuccess) {
     sortedArticles = [...(articlesData.articles || [])];
     sortedArticles.sort(
@@ -47,7 +47,7 @@ const Home = () => {
     );
   }
 
-  let announcement;
+  let announcement=[];
   if (announcementSuccess) {
     announcement = announcementData.announcements || [];
   }

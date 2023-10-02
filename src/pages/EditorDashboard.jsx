@@ -13,7 +13,7 @@ const EditorDashboard = () => {
   const { data, error, isSuccess, isLoading, refetch } =
     useGetAssignedArticlesQuery();
 
-  let articles, sortedArticles;
+  let articles=[], sortedArticles=[];
   if (isSuccess) {
     articles = data.assignedArticles || [];
     sortedArticles = [...(articles || [])];

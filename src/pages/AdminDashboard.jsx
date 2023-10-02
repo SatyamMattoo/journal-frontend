@@ -47,7 +47,7 @@ const AdminDashboard = () => {
     refetch: refetchAnnouncement,
   } = useGetAnnouncementQuery();
 
-  let editor, readyArticles, sortedReadyArticles, sortedArticles, announcement;
+  let editor=[], readyArticles=[], sortedReadyArticles=[], sortedArticles=[], announcement=[];
 
   if (editorSuccess) {
     editor = editorData.editors || [];

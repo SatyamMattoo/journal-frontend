@@ -7,7 +7,7 @@ const Archives = () => {
   // Articles
   const { data, error, isLoading, isSuccess } = useGetPublishedArticlesQuery();
 
-  let articles, sortedArticles;
+  let articles=[], sortedArticles=[];
   if (isSuccess) {
     articles = data.articles || [];
     sortedArticles = [...(articles || [])];
