@@ -44,7 +44,6 @@ const VolumeArticles = () => {
                   key={index}
                   name={article.title}
                   description={article.description}
-                  author={article.author ? article.author.name : "Anonymous"}
                   url={article.pdfFile}
                 />
               ))
