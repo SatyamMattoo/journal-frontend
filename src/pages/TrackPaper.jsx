@@ -12,10 +12,14 @@ const TrackPaper = () => {
   const handleTrackClick = async () => {
     try {
       const data = { id };
+      console.log(data);
+      
       const response = await getArticleProgress(data);
+      console.log(response.data)
       // Assuming the API response contains data.status
       if (response.data) {
         setProgress(calculateProgress(response.data.status));
+        console.log(response.data.status)
       }
       else{
         toast.error("Invalid Id or you are not the author");

@@ -23,10 +23,6 @@ const Submission = () => {
       formDataInstance.append("description", description);
       formDataInstance.append("pdfFile", data.pdfFile[0]);
 
-      console.log(formDataInstance.get("title"));
-      console.log(formDataInstance.get("description"));
-      console.log(formDataInstance.get("pdfFile"));
-
       const response = await submitArticle(formDataInstance);
 
       if (response.data) {
