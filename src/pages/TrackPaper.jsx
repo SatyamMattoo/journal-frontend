@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useGetArticleProgressMutation } from "../store/api/articleApi";
+import toast from "react-hot-toast";
 
 const TrackPaper = () => {
   const [progress, setProgress] = useState(0);
@@ -15,6 +16,9 @@ const TrackPaper = () => {
       // Assuming the API response contains data.status
       if (response.data) {
         setProgress(calculateProgress(response.data.status));
+      }
+      else{
+        toast.error("Invalid Id or you are not the author");
       }
     } catch (error) {
       console.error(error);
