@@ -33,13 +33,13 @@ const Home = () => {
     refetch: refetchAnnouncement,
   } = useGetAnnouncementQuery();
 
-  let sortedVolumes=[];
+  let sortedVolumes = [];
   if (volumeSuccess) {
     sortedVolumes = [...(volumesData.volumes || [])];
     sortedVolumes.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   }
 
-  let sortedArticles=[];
+  let sortedArticles = [];
   if (articlesSuccess) {
     sortedArticles = [...(articlesData.articles || [])];
     sortedArticles.sort(
@@ -47,7 +47,7 @@ const Home = () => {
     );
   }
 
-  let announcement=[];
+  let announcement = [];
   if (announcementSuccess) {
     announcement = announcementData.announcements || [];
   }
@@ -142,7 +142,9 @@ const Home = () => {
                     );
                   })
                 ) : (
-                  <></>
+                  <div className="p-4 m-2 card-gradient">
+                    <h1 className="text-3xl">No Announcements.</h1>
+                  </div>
                 )}
               </div>
             </div>
