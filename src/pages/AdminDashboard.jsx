@@ -48,7 +48,6 @@ const AdminDashboard = () => {
   } = useGetAnnouncementQuery();
 
   let editor,
-    articles,
     readyArticles,
     sortedReadyArticles,
     sortedArticles,
@@ -61,7 +60,6 @@ const AdminDashboard = () => {
     announcement = announcementData.announcements || [];
   }
   if (articleSuccess) {
-    articles = articleData.articles || [];
     sortedArticles = [...(articleData.articles || [])];
     sortedArticles.sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)

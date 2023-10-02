@@ -63,7 +63,7 @@ const Home = () => {
             </h1>
             <div className="flex">
               <div className=" flex flex-wrap flex-row-reverse volumes m-6">
-                {sortedVolumes ? (
+                {sortedVolumes.length > 0 ? (
                   sortedVolumes.map((volume, volumeIndex) => (
                     <Card
                       key={volumeIndex}
@@ -103,7 +103,7 @@ const Home = () => {
             </h1>
             <div className="flex">
               <div className="flex flex-wrap volumes m-6">
-                {sortedArticles ? (
+                {sortedArticles.length > 0 ? (
                   sortedArticles.map((item, index) => {
                     return (
                       <Card
@@ -130,7 +130,7 @@ const Home = () => {
             </h1>
             <div className="flex">
               <div className=" flex flex-wrap m-2 md:m-6 w-full">
-                {announcement ? (
+                {announcement.length > 0 ? (
                   announcement.map((item, index) => {
                     return (
                       <Card
