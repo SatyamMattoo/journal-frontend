@@ -8,16 +8,12 @@ const TrackPaper = () => {
   const [getArticleProgress, { isError, isLoading, error }] =
     useGetArticleProgressMutation();
 
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
   const handleTrackClick = async () => {
     try {
       const data = { id };
       const response = await getArticleProgress(data);
       // Assuming the API response contains data.status
-      if (response.data.status) {
+      if (response.data) {
         setProgress(calculateProgress(response.data.status));
       }
     } catch (error) {
@@ -69,6 +65,11 @@ const TrackPaper = () => {
           >
             {isLoading ? "Tracking..." : "Track"}
           </button>
+          {isError ? (
+            <div className="text-red-500">
+              Problem fetching details. Please try later
+            </div>
+          ) : null}
         </div>
       </div>
       <div className="my-10 flex justify-center items-center card-gradient w-full md:w-3/4 rounded-lg">
