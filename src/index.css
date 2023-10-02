@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.card-gradient {
+  background: rgb(244, 244, 246);
+  background: linear-gradient(158deg, #0a433d 25%, #266f68 100%);
+}
+.input {
+  margin: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  opacity: 0.8;
+  outline: none;
+  color: rgb(15 23 42);
+}
+
+.loader {
+  border-top-color: #0a433d;
+  -webkit-animation: spinner 1.5s linear infinite;
+  animation: spinner 1.5s linear infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
