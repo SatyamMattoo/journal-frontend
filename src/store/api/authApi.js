@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://hpuejournal.netlify.app/api/v1/users",
+    baseUrl: "https://hpuejournal.onrender.com/api/v1/users",
   }),
   endpoints: (builder) => ({
     register: builder.mutation({
