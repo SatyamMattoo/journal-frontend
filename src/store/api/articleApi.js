@@ -2,7 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const articleApi = createApi({
   reducerPath: "articleApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://hpuejournal.onrender.com/api/v1" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://hpuejournal.onrender.com/api/v1",
+  }),
   endpoints: (builder) => ({
     //Published Articles
     getPublishedArticles: builder.query({
