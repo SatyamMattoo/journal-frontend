@@ -245,6 +245,7 @@ const AdminDashboard = () => {
                         heading={item.title}
                         description={item.description}
                         date={item.createdAt}
+                        url={item.url?item.url:null}
                       />
                       <button
                         type="submit"

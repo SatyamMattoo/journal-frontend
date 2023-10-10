@@ -138,6 +138,7 @@ const Home = () => {
                         heading={item.title}
                         description={item.description}
                         date={item.createdAt}
+                        url={item.url?item.url:null}
                       />
                     );
                   })

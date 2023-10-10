@@ -35,7 +35,7 @@ const Login = () => {
     try {
       const response = await login(formData);
 
-      // Check if the login was successful
+      // Check if the login was successfull
       if (response.data) {
         dispatch(
           setUser({

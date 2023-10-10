@@ -6,6 +6,7 @@ import { useCreateAnnouncementMutation } from "../../store/api/articleApi";
 const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [url, setUrl] = useState("");
   const [createAnnouncement, { isLoading }] = useCreateAnnouncementMutation();
 
   const handleCreate = async () => {
@@ -13,6 +14,7 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
       const newAnnouncement = {
         title,
         description,
+        url,
       };
 
       const response = await createAnnouncement(newAnnouncement);
@@ -21,6 +23,7 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
         toast.success("Announcement Created Successfully");
         setTitle("");
         setDescription("");
+        
         refresh();
         onClose();
       } else {
@@ -48,6 +51,15 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
               placeholder="Enter Announcement Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="flex justify-start items-center w-full">
+            <input
+              type="text"
+              className="input w-full"
+              placeholder="Enter a link if needed"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
             />
           </div>
           <div className="flex justify-start items-center w-full">
