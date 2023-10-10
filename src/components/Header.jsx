@@ -10,7 +10,7 @@ const Header = () => {
           alt="Himachal Pradesh University"
         />
         <h2 className="text-sm md:text-xl p-1">
-          Internationla Center for Distance Edu. and Open Learning
+          International Center for Distance Edu. and Open Learning
         </h2>
         <p className="hidden md:block text-sm">
           (A State Government University Accredited with 'A' grade by NAAC)
