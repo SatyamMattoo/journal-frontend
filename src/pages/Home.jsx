@@ -87,13 +87,16 @@ const Home = () => {
             <div className="card-gradient m-6 rounded-lg p-10">
               <h1 className="text-4xl my-4">About Us</h1>
               <p className="text-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
-                iste temporibus doloribus quaerat illo autem distinctio ad
-                dignissimos. Dolore aliquid obcaecati expedita possimus earum,
-                voluptatibus reprehenderit, odit placeat provident, tempore
-                facere corporis mollitia? Ullam repellat eaque eos magni! Sequi
-                eos nobis sit atque vel voluptates accusantium ea rerum sint
-                animi.
+                Our eJournal website simplifies academic publishing. Users can
+                easily upload articles, track submissions, and access research
+                papers on our user-friendly platform. Automated issue and volume
+                updates keep content fresh, fostering a dynamic academic
+                environment.
+                <br />
+                Users benefit from a seamless experience, with easy login,
+                submission tracking, and access to a wealth of academic content.
+                Our platform ensures efficient knowledge sharing and scholarly
+                collaboration.
               </p>
             </div>
           </div>
@@ -138,7 +141,7 @@ const Home = () => {
                         heading={item.title}
                         description={item.description}
                         date={item.createdAt}
-                        url={item.url?item.url:null}
+                        url={item.url ? item.url : null}
                       />
                     );
                   })
