@@ -56,7 +56,7 @@ const ResubmitArticle = ({ isOpen, onClose, refresh, id }) => {
           type="text"
           name="description"
           placeholder="Enter the issue description"
-          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+          className="p-1 grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
