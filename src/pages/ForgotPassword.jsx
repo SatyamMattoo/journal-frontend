@@ -54,8 +54,9 @@ const ForgotPassword = () => {
               </button>
               {isError && (
                 <div>
-                  <span className="text-red-500">Error: </span>
-                  {error.data.message}
+                  <span className="text-red-500">
+                    Error: {error.data.message}
+                  </span>
                 </div>
               )}
               {isSuccess && (
