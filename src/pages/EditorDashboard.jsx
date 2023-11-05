@@ -37,7 +37,7 @@ const EditorDashboard = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <section className="min-h-screen bg-secondary bg-opacity-30 p-2">
+        <section className="min-h-screen bg-opacity-30 p-2">
           <div className="flex flex-col justify-evenly">
             <div className="h-2 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
             <h1 className="text-center text-primary text-3xl">

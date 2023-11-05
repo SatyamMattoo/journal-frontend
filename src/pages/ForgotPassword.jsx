@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Loader from "../components/Loader";
 import { useSendResetMailMutation } from "../store/api/authApi";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({
