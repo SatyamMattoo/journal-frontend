@@ -108,6 +108,9 @@ const Login = () => {
               {error.data.message}
             </div>
           )}
+          <div className="flex">
+            <Link to={"/forgot"} className="text-primary hover:text-blue9">Forgot Password?</Link>
+          </div>
         </div>
       </form>
     </>

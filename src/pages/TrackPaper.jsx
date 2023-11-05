@@ -79,7 +79,7 @@ const TrackPaper = () => {
       </div>
       <div className="my-10 flex justify-center items-center custom-shadow w-full md:w-3/4 rounded-lg">
         <div className="flex flex-col w-full p-4">
-          <h2 className="text-2xl font-semibold mb-4">Progress Bar</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-primary">Progress Bar</h2>
 
           <div className="w-full bg-white h-4 rounded-full relative">
             <div

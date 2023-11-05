@@ -42,7 +42,7 @@ const Archives = () => {
                 })
               ) : (
                 <div className="p-4 m-2 custom-shadow">
-                  <h1 className="text-3xl">No Articles Published.</h1>
+                  <h1 className="text-3xl text-gray-600">No Articles Published.</h1>
                 </div>
               )}
             </div>

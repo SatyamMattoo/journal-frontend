@@ -89,7 +89,7 @@ const EditorDashboard = () => {
                   ))
                 ) : (
                   <div className="p-4 m-2 custom-shadow">
-                    <h1 className="text-3xl">No Articles Assigned yet</h1>
+                    <h1 className="text-3xl text-gray-600">No Articles Assigned yet</h1>
                   </div>
                 )}
               </div>

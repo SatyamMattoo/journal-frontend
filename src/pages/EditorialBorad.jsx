@@ -30,7 +30,7 @@ const EditorialBorad = () => {
                 })
               ) : (
                 <div className="p-4 m-2 custom-shadow">
-                  <h1 className="text-3xl">No Editors Found.</h1>
+                  <h1 className="text-3xl text-gray-600">No Editors Found.</h1>
                 </div>
               )}
             </div>

@@ -9,7 +9,8 @@ const ForgotPassword = () => {
     email: "",
   });
 
-  const [sendResetMail, { data, isLoading, isError,isSuccess, error }] = useSendResetMailMutation();
+  const [sendResetMail, { data, isLoading, isError, isSuccess, error }] =
+    useSendResetMailMutation();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,12 +32,14 @@ const ForgotPassword = () => {
             <form
               method="POST"
               onSubmit={handleSubmit}
-              className="flex flex-col w-full m-6"
+              className="flex flex-col w-full m-6 gap-4"
             >
-              <h1 className="text-3xl font-bold text-center">Enter Email Send</h1>
+              <h1 className="text-3xl font-bold text-center text-primary">
+                Enter Email Send
+              </h1>
               <input
                 type="email"
-                className="input"
+                className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -45,7 +48,7 @@ const ForgotPassword = () => {
               />
               <button
                 type="submit"
-                className="p-2 mt-8 rounded-full bg-secondary hover:bg-primary"
+                className="p-2 rounded-full bg-primary hover:bg-blue9"
                 disabled={isLoading} // Disable the button while loading
               >
                 {isLoading ? "Sending..." : "Send Mail"}{" "}
@@ -58,12 +61,14 @@ const ForgotPassword = () => {
               )}
               {isSuccess && (
                 <div>
-                  <span className="text-green-500">Mail Sent Successfully </span>
+                  <span className="text-green-500">
+                    Mail Sent Successfully{" "}
+                  </span>
                 </div>
               )}
-              <h4 className="text-sm mt-4">
+              <h4 className="text-sm text-gray-600">
                 Want to create a account?
-                <Link to="/register" className="hover:text-slate-200">
+                <Link to="/register" className="text-primary hover:text-blue9">
                   {" "}
                   Register Here.
                 </Link>

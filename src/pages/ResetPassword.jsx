@@ -61,14 +61,14 @@ const ResetPassword = () => {
             <form
               method="POST"
               onSubmit={handleSubmit}
-              className="flex flex-col w-full m-12"
+              className="flex flex-col w-full m-12 gap-4"
             >
               <h1 className="text-3xl font-bold text-center">
                 Enter new password
               </h1>
               <input
                 type="password"
-                className="input"
+                className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
                 name="newPassword"
                 value={formData.newPassword}
                 onChange={handleChange}
@@ -77,7 +77,7 @@ const ResetPassword = () => {
               />
               <input
                 type="password"
-                className="input"
+                className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
@@ -104,9 +104,9 @@ const ResetPassword = () => {
                   </span>
                 </div>
               )}
-              <h4 className="text-sm mt-4">
+              <h4 className="text-sm text-gray-600">
                 Want to create a account?
-                <Link to="/register" className="hover:text-slate-200">
+                <Link to="/register" className="text-primary hover:text-blue9">
                   {" "}
                   Register Here.
                 </Link>
