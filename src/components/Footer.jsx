@@ -45,7 +45,7 @@ const Footer = () => {
             <div className="flex">
               <div className="flex flex-col">
                 <div className="facebook flex items-center ">
-                  <FaLinkedin />
+                  <FaLinkedin className="bg-blue9" />
                   <a
                     href="www.linkedin.com/in/satyam-mattoo"
                     className="mx-1 text-gray-600"
@@ -54,7 +54,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="twitter flex items-center ">
-                  <FaTwitterSquare />
+                  <FaTwitterSquare className="bg-blue9" />
                   <a
                     href="https://twitter.com/SatyamMattoo07"
                     className="mx-1 text-gray-600"
@@ -63,7 +63,7 @@ const Footer = () => {
                   </a>
                 </div>
                 <div className="youtube flex items-center">
-                  <FaGithubSquare />
+                  <FaGithubSquare className="bg-blue9" />
                   <a
                     href="https://github.com/SatyamMattoo"
                     className="mx-1 text-gray-600"
