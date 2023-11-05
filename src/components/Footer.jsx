@@ -26,7 +26,7 @@ const Footer = () => {
             </h2>
             <div className="flex">
               <div className="flex flex-col justify-center items-start text-gray-600">
-                <p className="text-gray-600">🕿 0177 283 3555</p>
+                <p className="text-gray-600">🕿 +91 7876740985</p>
                 <p className="text-gray-600">
                   <a href="mailto:vc@hpuniv.ac.in" target="_blank">
                     ✉ satyammattoo2003@gmail.com
