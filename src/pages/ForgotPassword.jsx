@@ -27,7 +27,7 @@ const ForgotPassword = () => {
         <Loader />
       ) : (
         <section className="h-screen m-5 flex justify-center items-center flex-col">
-          <div className=" mx-auto flex justify-center items-center custom-shadow w-full lg:w-1/2 rounded-lg">
+          <div className=" mx-auto flex justify-center items-center custom-shadow w-full lg:w-1/4 rounded-lg">
             <form
               method="POST"
               onSubmit={handleSubmit}
@@ -66,10 +66,10 @@ const ForgotPassword = () => {
                 </div>
               )}
               <h4 className="text-sm text-gray-600">
-                Want to create a account?
-                <Link to="/register" className="text-primary hover:text-blue9">
+                Want to Sign Up/In
+                <Link to="/auth" className="text-primary hover:text-blue9">
                   {" "}
-                  Register Here.
+                  Click Here.
                 </Link>
               </h4>
             </form>
