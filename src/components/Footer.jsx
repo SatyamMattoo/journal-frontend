@@ -49,6 +49,8 @@ const Footer = () => {
                   <a
                     href="www.linkedin.com/in/satyam-mattoo"
                     className="mx-1 text-gray-600"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     LinkedIn
                   </a>
@@ -58,6 +60,8 @@ const Footer = () => {
                   <a
                     href="https://twitter.com/SatyamMattoo07"
                     className="mx-1 text-gray-600"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     Twitter
                   </a>
@@ -67,6 +71,8 @@ const Footer = () => {
                   <a
                     href="https://github.com/SatyamMattoo"
                     className="mx-1 text-gray-600"
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     GitHub
                   </a>
