@@ -144,7 +144,9 @@ const AdminDashboard = () => {
                   ))
                 ) : (
                   <div className="p-4 m-2 custom-shadow">
-                    <h1 className="text-3xl text-gray-600">No Articles to Send for review</h1>
+                    <h1 className="text-3xl text-gray-600">
+                      No Articles to Send for review
+                    </h1>
                   </div>
                 )}
                 <AsignArticle
@@ -192,7 +194,9 @@ const AdminDashboard = () => {
                   ))
                 ) : (
                   <div className="p-4 m-2 custom-shadow">
-                    <h1 className="text-3xl text-gray-600">No Articles to Publish.</h1>
+                    <h1 className="text-3xl text-gray-600">
+                      No Articles to Publish.
+                    </h1>
                   </div>
                 )}
               </div>
@@ -233,7 +237,7 @@ const AdminDashboard = () => {
                   <p>Loading editors...</p>
                 )}
                 <button
-                  className="p-4 bg-secondary hover:bg-primary m-2 rounded-full"
+                  className="w-[200px] self-center p-2 bg-primary hover:bg-blue9 m-2 rounded-full"
                   onClick={() => setIsEditorModalOpen(true)}
                 >
                   Add more +
@@ -263,7 +267,7 @@ const AdminDashboard = () => {
                       />
                       <button
                         type="submit"
-                        className="p-2 bg-secondary hover:bg-red-900 m-2 rounded-full"
+                        className="w-[200px] self-center p-2 bg-primary hover:bg-red-400 m-2 rounded-full"
                         onClick={() => handleDeleteAnnouncementClick(item)}
                       >
                         Delete
@@ -288,7 +292,7 @@ const AdminDashboard = () => {
                   </div>
                 )}
                 <button
-                  className="p-4 bg-secondary hover:bg-primary m-2 rounded-full"
+                  className="w-[200px] self-center p-2 bg-primary hover:bg-blue9 m-2 rounded-full"
                   onClick={() => setIsAnnouncementModalOpen(true)}
                 >
                   Add Announcement
