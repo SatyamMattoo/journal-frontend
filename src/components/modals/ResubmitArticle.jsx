@@ -39,7 +39,7 @@ const ResubmitArticle = ({ isOpen, onClose, refresh, id }) => {
       onRequestClose={onClose}
       className="bg-secondary bg-opacity-70 w-full min-h-screen z-40 flex flex-col items-center justify-center"
     >
-      <div className="flex flex-col w-full justify-center items-center h-screen gap-4">
+      <div className="flex flex-col justify-center items-center gap-4">
         <h2 className="text-2xl font-bold">Send For Resubmission</h2>
         <input
           required
