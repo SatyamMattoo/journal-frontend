@@ -3,7 +3,10 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://hpuejournal.onrender.com/api/v1/users",
+    baseUrl: "http://localhost:4000/api/v1/users",
+    headers: {
+      "Content-Type": "application/json",
+    },
   }),
   endpoints: (builder) => ({
     register: builder.mutation({
@@ -95,5 +98,5 @@ export const {
   useResetPasswordMutation,
   //Admin
   useCreateEditorMutation,
-  useDeleteEditorMutation
+  useDeleteEditorMutation,
 } = authApi;

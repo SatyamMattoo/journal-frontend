@@ -23,7 +23,7 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
         toast.success("Announcement Created Successfully");
         setTitle("");
         setDescription("");
-        
+
         refresh();
         onClose();
       } else {
@@ -41,13 +41,13 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
       className="bg-secondary bg-opacity-70 w-full min-h-screen z-40 flex flex-col items-center justify-center"
     >
       <div className="flex -wull">
-        <div className="flex flex-col justify-center p-2 items-center w-full">
+        <div className="flex flex-col justify-center p-2 items-center w-full gap-4">
           <h2 className="text-3xl font-body">Create New Announcement</h2>
           <div className="flex justify-start items-center w-full">
             <input
               required
               type="text"
-              className="input w-full"
+              className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
               placeholder="Enter Announcement Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
@@ -56,7 +56,7 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
           <div className="flex justify-start items-center w-full">
             <input
               type="text"
-              className="input w-full"
+              className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
               placeholder="Enter a link if needed"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
@@ -67,7 +67,7 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
               required
               rows={3}
               type="email"
-              className="input w-full"
+              className="grow p-2 shrink-0 rounded text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
               placeholder="Enter Announcement Description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -76,14 +76,14 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
           <div className="flex">
             {" "}
             <button
-              className="p-3 bg-secondary hover:bg-primary m-2 rounded-full"
+              className="p-3 bg-primary hover:bg-blue9 m-2 rounded-full"
               onClick={handleCreate}
               disabled={isLoading}
             >
               {isLoading ? "Creating..." : "Create"}
             </button>
             <button
-              className="p-3 bg-secondary hover:bg-red-500 m-2 rounded-full"
+              className="p-3 bg-secondary hover:bg-red-400 m-2 rounded-full"
               onClick={onClose}
             >
               Cancel

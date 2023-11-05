@@ -17,7 +17,8 @@ const VolumeArticles = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  let articles=[], sortedArticles=[];
+  let articles = [],
+    sortedArticles = [];
   if (isSuccess) {
     articles = data.articles || [];
     sortedArticles = [...(articles || [])];
@@ -33,9 +34,11 @@ const VolumeArticles = () => {
       ) : (
         <section className="min-h-screen m-5">
           <div className="flex flex-col my-4">
-            <h1 className="p-4 bg-primary h-[50px] text-center  rounded-lg">
+            <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-3xl text-center text-primary">
               Volume : {volumeNumber} Issue : {issueNumber}
             </h1>
+            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
           </div>
           <div className="flex flex-wrap volumes m-6">
             {sortedArticles ? (
@@ -48,7 +51,7 @@ const VolumeArticles = () => {
                 />
               ))
             ) : (
-              <div className="p-4 m-2 card-gradient">
+              <div className="p-4 m-2 custom-shadow">
                 <h1 className="text-3xl">No Articles Published.</h1>
               </div>
             )}

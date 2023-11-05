@@ -39,14 +39,14 @@ const ResubmitArticle = ({ isOpen, onClose, refresh, id }) => {
       onRequestClose={onClose}
       className="bg-secondary bg-opacity-70 w-full min-h-screen z-40 flex flex-col items-center justify-center"
     >
-      <div className="flex flex-col w-full justify-center items-center h-screen">
+      <div className="flex flex-col w-full justify-center items-center h-screen gap-4">
         <h2 className="text-2xl font-bold">Send For Resubmission</h2>
         <input
           required
           type="text"
           name="title"
           placeholder="Enter the issue title"
-          className="input w-1/2"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -56,7 +56,7 @@ const ResubmitArticle = ({ isOpen, onClose, refresh, id }) => {
           type="text"
           name="description"
           placeholder="Enter the issue description"
-          className="input w-1/2"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -64,7 +64,7 @@ const ResubmitArticle = ({ isOpen, onClose, refresh, id }) => {
           {" "}
           <button
             onClick={handleSubmit}
-            className="p-3 bg-secondary hover:bg-primary my-1 mx-3 rounded-lg"
+            className="p-3 bg-primary hover:blue9 my-1 mx-3 rounded-lg"
           >
             {isLoading ? "Sending..." : "Send"}
           </button>

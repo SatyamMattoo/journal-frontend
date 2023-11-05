@@ -46,19 +46,19 @@ const Submission = () => {
         <Loader />
       ) : (
         <section className="h-screen m-5 flex justify-center items-center flex-col">
-          <div className="conatiner mx-auto flex justify-center items-center card-gradient w-full md:w-1/2 rounded-lg">
+          <div className="conatiner mx-auto flex justify-center items-center custom-shadow w-full md:w-1/2 rounded-lg">
             <form
-              className="flex flex-col justify-between items-center w-full m-6"
+              className="flex flex-col justify-between items-center w-full m-6 gap-4"
               onSubmit={handleSubmit(onSubmit)}
               encType="multipart/form-data"
             >
-              <h1 className="text-3xl mb-10 font-bold text-center">
+              <h1 className="text-3xl mb-10 font-bold text-center text-primary">
                 Submit Your Article
               </h1>
               <input
                 type="text"
                 required
-                className="input w-[80%]"
+                className="w-full md:w-3/4 grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
                 name="title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -68,7 +68,7 @@ const Submission = () => {
                 rows={3}
                 type="text"
                 required
-                className="input w-[80%]"
+                className="w-full md:w-3/4 grow shrink-0 rounded px-2.5 py-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
                 name="description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
@@ -78,13 +78,13 @@ const Submission = () => {
                 type="file"
                 {...register("pdfFile")}
                 required
-                className="input w-[80%]"
+                className="w-full md:w-3/4 grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11"
                 name="pdfFile"
                 accept=".pdf"
               />
               <button
                 type="submit"
-                className=" p-2 w-3/4 mt-8 self-center rounded-full bg-secondary hover:bg-primary "
+                className=" p-2 w-3/4 mt-8 self-center rounded-full bg-primary hover:bg-blue9"
               >
                 Submit
               </button>

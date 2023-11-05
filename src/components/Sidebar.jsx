@@ -45,7 +45,7 @@ const Sidebar = () => {
   };
 
   return (
-    <nav className="sticky top-30 bg-gradient-to-br from-primary to-secondary md:w-full md:flex z-0">
+    <nav className="sticky top-30  bg-gradient-to-br from-primary to-secondary md:w-full md:flex z-0">
       <div className="md:hidden">
         <button
           onClick={() => toggleSidebar()}
@@ -65,7 +65,7 @@ const Sidebar = () => {
         <Link
           to="/"
           onClick={() => toggleSidebar()}
-          className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
           Home
         </Link>
@@ -73,7 +73,7 @@ const Sidebar = () => {
           <Link
             to="/admin"
             onClick={() => toggleSidebar()}
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Dashboard
           </Link>
@@ -82,7 +82,7 @@ const Sidebar = () => {
           <Link
             onClick={() => toggleSidebar()}
             to="/admin"
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Dashboard
           </Link>
@@ -90,14 +90,14 @@ const Sidebar = () => {
         <Link
           onClick={() => toggleSidebar()}
           to="/archives"
-          className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
           Archives
         </Link>
         <Link
           onClick={() => toggleSidebar()}
           to="/editorialboard"
-          className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
           Editorial Board
         </Link>
@@ -105,7 +105,7 @@ const Sidebar = () => {
           <Link
             onClick={() => toggleSidebar()}
             to="/submission"
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Submissions
           </Link>
@@ -114,7 +114,7 @@ const Sidebar = () => {
           <Link
             onClick={() => toggleSidebar()}
             to="/track"
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Track Papers
           </Link>
@@ -123,8 +123,8 @@ const Sidebar = () => {
         {!isAuthenticated && (
           <Link
             onClick={() => toggleSidebar()}
-            to="/register"
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            to="/auth"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Login/Register
           </Link>
@@ -132,7 +132,7 @@ const Sidebar = () => {
         {isAuthenticated && (
           <button
             onClick={handleLogout}
-            className="bg-secondary p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Logout
           </button>

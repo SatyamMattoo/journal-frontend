@@ -6,8 +6,6 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Archives from "./pages/Archives";
 import EditorialBorad from "./pages/EditorialBorad";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 import Submission from "./pages/Submission";
 import TrackPaper from "./pages/TrackPaper";
 import Footer from "./components/Footer";
@@ -21,6 +19,7 @@ import { setUser } from "./store/state/auth";
 import ProtectedRoute from "./protectedRoute/ProtectedRoute";
 import AuthRoutes from "./protectedRoute/AuthRoutes";
 import ResetPassword from "./pages/ResetPassword";
+import Auth from "./pages/Auth";
 
 function App() {
   const dispatch = useDispatch();
@@ -55,8 +54,7 @@ function App() {
             path="/articles/volume/:volumeNumber/:issueNumber"
             element={<VolumeArticles />}
           />
-          <Route exact path="/register" element={<Register />} />
-          {<Route exact path="/login" element={<Login />} />}
+          <Route exact path="/auth" element={<Auth />} />
           <Route exact path="/forgot" element={<ForgotPassword />} />
           <Route exact path="/password/reset/:token" element={<ResetPassword />} />
 

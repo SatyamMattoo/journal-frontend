@@ -47,7 +47,11 @@ const AdminDashboard = () => {
     refetch: refetchAnnouncement,
   } = useGetAnnouncementQuery();
 
-  let editor=[], readyArticles=[], sortedReadyArticles=[], sortedArticles=[], announcement=[];
+  let editor = [],
+    readyArticles = [],
+    sortedReadyArticles = [],
+    sortedArticles = [],
+    announcement = [];
 
   if (editorSuccess) {
     editor = editorData.editors || [];
@@ -102,18 +106,22 @@ const AdminDashboard = () => {
       {editorLoading || articleLoading || readyArticleLoading ? (
         <Loader />
       ) : (
-        <section className="min-h-screen bg-secondary bg-opacity-30 p-2">
+        <section className="min-h-screen p-2">
           <div
             key={selectedArticle ? selectedArticle._id : "default"}
             className="flex flex-col justify-evenly"
           >
-            <div className="flex p-4 bg-primary h-[50px] justify-center items-center rounded-lg">
-              <h1 className="text-center text-2xl">Admin Dashboard</h1>
-            </div>
-            <div className="flex flex-col justify-evenly items-center m-2">
-              <div className="flex p-4 bg-primary w-[90%] h-[70px] justify-center items-center rounded-lg">
-                <h1 className="text-center text-2xl">Unassigned Articles</h1>
-              </div>
+            <div className="h-2 w-1/2 mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-xl md:text-2xl lg:text-3xl">
+              Admin Dashboard
+            </h1>
+            <div className="w-1/2 h-2 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
+            <div className="flex flex-col justify-evenly">
+              <div className="h-1 w-1/2 mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+              <h1 className="text-center text-primary text-2xl">
+                Unassigned Artciles
+              </h1>
+              <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
               <div className="flex flex-wrap w-[90%] items-center  m-10">
                 {sortedArticles.length > 0 ? (
                   sortedArticles.map((item, index) => (
@@ -127,7 +135,7 @@ const AdminDashboard = () => {
                       />
                       <button
                         type="submit"
-                        className="p-2 bg-secondary hover:bg-primary m-2 rounded-full"
+                        className="w-[200px] self-center p-2 bg-primary hover:bg-blue9 m-2 rounded-full"
                         onClick={() => handleAssignClick(item)}
                       >
                         Assign article
@@ -135,8 +143,8 @@ const AdminDashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Articles to Send for review</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-3xl text-gray-600">No Articles to Send for review</h1>
                   </div>
                 )}
                 <AsignArticle
@@ -149,9 +157,11 @@ const AdminDashboard = () => {
               </div>
             </div>
             <div className="flex flex-col justify-center items-center">
-              <div className="flex p-4 bg-primary w-[90%] h-[70px] justify-center items-center rounded-lg">
-                <h1 className="text-center text-2xl">Ready to Publish</h1>
-              </div>
+              <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+              <h1 className="text-center text-primary text-2xl">
+                Ready to publish
+              </h1>
+              <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
               <div className="flex flex-wrap w-[90%] items-center m-10">
                 {readyArticles.length > 0 ? (
                   readyArticles.map((item, index) => (
@@ -167,7 +177,7 @@ const AdminDashboard = () => {
                       />
                       <button
                         type="submit"
-                        className="p-2 bg-secondary hover:bg-primary m-2 rounded-full"
+                        className="w-[200px] self-center p-2 bg-primary hover:bg-blue9 m-2 rounded-full"
                         onClick={() => handlePublishClick(item)}
                       >
                         Publish Article
@@ -181,16 +191,18 @@ const AdminDashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Articles to Publish.</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-3xl text-gray-600">No Articles to Publish.</h1>
                   </div>
                 )}
               </div>
             </div>
             <div className="flex flex-col justify-center items-center">
-              <div className="flex p-4 bg-primary w-[90%] h-[70px] justify-center items-center rounded-lg ">
-                <h1 className="text-center text-2xl">List of editors</h1>
-              </div>
+              <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+              <h1 className="text-center text-primary text-2xl">
+                List of Editors
+              </h1>
+              <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
               <div className="flex flex-wrap w-[90%] items-center m-10">
                 {editor ? (
                   editor.map((item, index) => (
@@ -202,7 +214,7 @@ const AdminDashboard = () => {
                       />
                       <button
                         type="submit"
-                        className="p-2 bg-secondary hover:bg-red-900 m-2 rounded-full"
+                        className="w-[200px] self-center p-2 bg-primary hover:bg-red-400 m-2 rounded-full"
                         onClick={() => handleDeleteClick(item)}
                       >
                         Delete
@@ -234,9 +246,11 @@ const AdminDashboard = () => {
               />
             </div>
             <div className="flex flex-col justify-center items-center">
-              <div className="flex p-4 bg-primary w-[90%] h-[70px] justify-center items-center rounded-lg ">
-                <h1 className="text-center text-2xl">Announcements</h1>
-              </div>
+              <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+              <h1 className="text-center text-primary text-2xl">
+                Announcements
+              </h1>
+              <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
               <div className="flex flex-wrap w-[90%] items-center m-10">
                 {announcement.length > 0 ? (
                   announcement.map((item, index) => (
@@ -245,7 +259,7 @@ const AdminDashboard = () => {
                         heading={item.title}
                         description={item.description}
                         date={item.createdAt}
-                        url={item.url?item.url:null}
+                        url={item.url ? item.url : null}
                       />
                       <button
                         type="submit"
@@ -267,8 +281,10 @@ const AdminDashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Announcements</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-3xl text-gray-600">
+                      No announcements at this moment.
+                    </h1>
                   </div>
                 )}
                 <button

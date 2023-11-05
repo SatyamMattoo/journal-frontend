@@ -34,15 +34,15 @@ const PublishArticle = ({ isOpen, onClose, id, refresh }) => {
       </h2>
       <button
         onClick={handleDelete}
-        className="p-4 bg-secondary hover:bg-primary m-2 rounded-lg"
+        className="h-[30px] w-[80px] bg-primary hover:blue9 m-2 rounded-lg"
       >
         {isLoading ? "Publishing..." : "Publish"}
       </button>
       <button
         onClick={onClose}
-        className="p-4 bg-secondary hover:bg-red-700 m-2 rounded-lg"
+        className="h-[30px] w-[80px] bg-secondary hover:bg-red-700 m-2 rounded-lg"
       >
-        No
+        Close
       </button>
     </Modal>
   );

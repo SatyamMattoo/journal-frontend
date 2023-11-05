@@ -57,7 +57,7 @@ const ResetPassword = () => {
         <Loader />
       ) : (
         <section className="h-screen m-5 flex justify-center items-center flex-col">
-          <div className="conatiner mx-auto flex justify-center items-center card-gradient w-1/2 rounded-lg">
+          <div className="conatiner mx-auto flex justify-center items-center custom-shadow w-1/2 rounded-lg">
             <form
               method="POST"
               onSubmit={handleSubmit}

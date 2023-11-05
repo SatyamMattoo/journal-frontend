@@ -1,3 +1,5 @@
+const { blackA, green, mauve, violet, blue } = require("@radix-ui/colors");
+
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
@@ -19,9 +21,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#0a433d",
-        secondary: "#266f68",
+        primary: "#00ADEF",
+        secondary: "#54bbe4d2",
         tertiary: "#000000",
+        ...blackA,
+        ...green,
+        ...mauve,
+        ...violet,
+        ...blue,
       },
     },
   },

@@ -13,7 +13,8 @@ const EditorDashboard = () => {
   const { data, error, isSuccess, isLoading, refetch } =
     useGetAssignedArticlesQuery();
 
-  let articles=[], sortedArticles=[];
+  let articles = [],
+    sortedArticles = [];
   if (isSuccess) {
     articles = data.assignedArticles || [];
     sortedArticles = [...(articles || [])];
@@ -38,9 +39,11 @@ const EditorDashboard = () => {
       ) : (
         <section className="min-h-screen bg-secondary bg-opacity-30 p-2">
           <div className="flex flex-col justify-evenly">
-            <div className="flex p-4 bg-primary h-[50px] justify-center items-center rounded-lg">
-              <h1 className="text-center text-2xl">Editor Dashboard</h1>
-            </div>
+            <div className="h-2 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-3xl">
+              Editor Dashboard
+            </h1>
+            <div className="w-1/2 h-2 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
             <div className="flex flex-col justify-evenly items-center m-2">
               <div className="flex p-4 bg-primary w-[90%] h-[70px] justify-center items-center rounded-lg">
                 <h1 className="text-center text-2xl">Assigned Articles</h1>
@@ -85,7 +88,7 @@ const EditorDashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
+                  <div className="p-4 m-2 custom-shadow">
                     <h1 className="text-3xl">No Articles Assigned yet</h1>
                   </div>
                 )}

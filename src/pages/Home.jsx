@@ -58,9 +58,9 @@ const Home = () => {
       ) : (
         <section className="min-h-screen m-5">
           <div className="flex flex-col my-4">
-            <h1 className="text-3xl flex items-center justify-center bg-primary h-[50px] rounded-lg">
-              Volumes
-            </h1>
+            <div className="h-1 w-1/2 mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-3xl">Volumes</h1>
+            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
             <div className="flex">
               <div className=" flex flex-wrap flex-row-reverse volumes m-6">
                 {sortedVolumes.length > 0 ? (
@@ -73,20 +73,20 @@ const Home = () => {
                     />
                   ))
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Volumes Published.</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-2xl text-gray-600">No volumes published yet.</h1>
                   </div>
                 )}
               </div>
             </div>
           </div>
           <div className="flex flex-col my-4">
-            <h1 className="text-3xl flex items-center justify-center bg-primary h-[50px] rounded-lg">
-              About
-            </h1>
-            <div className="card-gradient m-6 rounded-lg p-10">
-              <h1 className="text-4xl my-4">About Us</h1>
-              <p className="text-xl">
+            <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-3xl">About Us</h1>
+            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
+            <div className="custom-shadow m-6 rounded-lg p-10 ">
+              <h1 className="text-2xl my-4 text-primary">About Us</h1>
+              <p className="text-lg text-mauve10">
                 Our eJournal website simplifies academic publishing. Users can
                 easily upload articles, track submissions, and access research
                 papers on our user-friendly platform. Automated issue and volume
@@ -101,9 +101,9 @@ const Home = () => {
             </div>
           </div>
           <div className="flex flex-col my-4">
-            <h1 className="text-3xl flex items-center justify-center bg-primary h-[50px] rounded-lg">
-              Articles
-            </h1>
+            <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-3xl">Articles</h1>
+            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
             <div className="flex">
               <div className="flex flex-wrap volumes m-6">
                 {sortedArticles.length > 0 ? (
@@ -120,17 +120,17 @@ const Home = () => {
                     );
                   })
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Articles Published.</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-2xl text-gray-600">No Articles Published.</h1>
                   </div>
                 )}
               </div>
             </div>
           </div>
           <div className="flex flex-col my-4">
-            <h1 className="text-3xl flex items-center justify-center bg-primary h-[50px] rounded-lg">
-              Anouncements
-            </h1>
+            <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+            <h1 className="text-center text-primary text-3xl">Announcements</h1>
+            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
             <div className="flex">
               <div className=" flex flex-wrap m-2 md:m-6 w-full">
                 {announcement.length > 0 ? (
@@ -146,8 +146,8 @@ const Home = () => {
                     );
                   })
                 ) : (
-                  <div className="p-4 m-2 card-gradient">
-                    <h1 className="text-3xl">No Announcements.</h1>
+                  <div className="p-4 m-2 custom-shadow">
+                    <h1 className="text-2xl text-gray-600">No Announcements.</h1>
                   </div>
                 )}
               </div>

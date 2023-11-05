@@ -40,11 +40,11 @@ const AsignArticle = ({ isOpen, onClose, articleId, editors, refresh }) => {
         <h2 className="text-2xl font-bold">Select an Editor</h2>
         <ul>
           {editors.map((editor, index) => (
-            <div key={index}>
-              {editor.name}
+            <div key={index} className="flex justify-betweens items-center">
+              <h1 className="text-xl">{editor.name}</h1>
               <button
                 onClick={() => handleAssignArticle(editor._id)}
-                className="p-2 bg-secondary hover:bg-primary m-2 rounded-full"
+                className="p-2 bg-primary hover:bg-blue9 rounded-full m-2"
                 disabled={isAssigningArticle}
               >
                 {isAssigningArticle ? "Assigning..." : "Assign"}
@@ -54,7 +54,7 @@ const AsignArticle = ({ isOpen, onClose, articleId, editors, refresh }) => {
         </ul>
         <button
           onClick={onClose}
-          className="p-2 bg-secondary hover:bg-red-700 m-2 rounded-full"
+          className="p-2 bg-secondary hover:bg-red-500 m-2 rounded-full"
         >
           Close
         </button>

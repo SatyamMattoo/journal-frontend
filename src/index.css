@@ -5,24 +5,15 @@
 * {
   margin: 0;
   padding: 0;
-  color: white;
+  color: whitesmoke;
 }
 
-.card-gradient {
-  background: rgb(244, 244, 246);
-  background: linear-gradient(158deg, #0a433d 25%, #266f68 100%);
-}
-.input {
-  margin: 1rem;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  opacity: 0.8;
-  outline: none;
-  color: rgb(15 23 42);
+.custom-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .loader {
-  border-top-color: #0a433d;
+  border-top-color: #54bbe4d2;
   -webkit-animation: spinner 1.5s linear infinite;
   animation: spinner 1.5s linear infinite;
 }

@@ -34,7 +34,7 @@ const SendArticle = ({ isOpen, onClose, refresh, id }) => {
       </h2>
       <button
         onClick={handleSubmit}
-        className="p-4 bg-secondary hover:bg-primary m-2 rounded-lg"
+        className="p-4 bg-primary hover:blue9 m-2 rounded-lg"
       >
         {isLoading ? "Sending..." : "Send"}
       </button>

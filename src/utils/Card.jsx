@@ -26,32 +26,32 @@ const Card = ({
 
   const formattedDate = `${day}-${month}-${years}`;
   return (
-    <div className="m-1 card-gradient p-2 rounded-[20px] flex flex-col items-center justify-center">
+    <div className="m-4 border custom-shadow p-2 rounded-[20px] flex flex-col items-center justify-center hover:scale-105">
       <div className="rounded-[20px] p-2 md:py-5 md:px-12 h-[10%] flex justify-evenly flex-col ">
         <div className="text-start flex flex-col">
           {/* volumes */}
-          {volumeNo ? <h1 className="text-xl md:text-2xl">Volume - {volumeNo}</h1> : <></>}
+          {volumeNo ? <h1 className="text-lg md:text-xl text-primary">Volume - {volumeNo}</h1> : <></>}
           {issues ? (
             issues.map((issue, issueIndex) => (
               <div key={issueIndex}>
-                <h3 className="text-lg md:text-2xl">Issue {issue.issueNumber}</h3>
+                <h3 className="text-lg md:text-xl text-gray-600">Issue: {issue.issueNumber}</h3>
               </div>
             ))
           ) : (
             <></>
           )}
 
-          {heading ? <h1 className="text-xl md:text-2xl">{heading}</h1> : <></>}
+          {heading ? <h1 className="text-lg md:text-xl text-gray-700">{heading}</h1> : <></>}
 
-          {name ? <h1 className="text-xl md:text-2xl">Name: {name}</h1> : <></>}
-          {description ? <p className="text-lg md:text-xl"> {description}</p> : <></>}
+          {name ? <h1 className="text-lg md:text-xl text-primary">Name: {name}</h1> : <></>}
+          {description ? <p className=" text-base text-gray-600"> {description}</p> : <></>}
           <br />
-          {author ? <p className="text-lg md:text-xl">Author: {author}</p> : <></>}
-          {year ? <p className="text-lg md:text-xl">Published in: {year}</p> : <></>}
-          {date ? <p className="text-base md:text-xl">Published on: {formattedDate}</p> : <></>}
-          {edition ? <h2 className="text-lg md:text-xl">{edition}</h2> : <></>}
-          {email ? <h2 className="text-lg md:text-xl">Email: {email}</h2> : <></>}
-          {department ? <h2 className="text-lg md:text-xl">Department: {department}</h2> : <></>}
+          {author ? <p className="text-lg text-mauve10">Author: {author}</p> : <></>}
+          {year ? <p className="text-lg md:text-base text-gray-500">Published in: {year}</p> : <></>}
+          {date ? <p className="text-base text-gray-500">Published on: {formattedDate}</p> : <></>}
+          {edition ? <h2 className="text-lg md:text-xl text-gray-500">{edition}</h2> : <></>}
+          {email ? <h2 className="text-lg md:text-xl text-mauve10">Email: {email}</h2> : <></>}
+          {department ? <h2 className="text-lg md:text-xl text-gray-500">Department: {department}</h2> : <></>}
           {url ? (
             <a
               href={url}
@@ -59,7 +59,7 @@ const Card = ({
               rel="noopener noreferrer"
               className="self-center w-full"
             >
-              <button className="bg-primary self-center py-2 px-4 rounded-lg mt-2 hover:bg-secondary w-full">
+              <button className="bg-primary text-white self-center py-2 px-4 rounded-lg mt-2 hover:bg-blue9 w-full">
                 View
               </button>
             </a>
@@ -71,7 +71,7 @@ const Card = ({
               <Link
                 key={index}
                 to={`/articles/volume/${volumeNo}/${issue.issueNumber}`}
-                className="p-2 bg-primary rounded-lg mt-6 text-center"
+                className="p-2 text-white bg-primary rounded-lg mt-6 text-center"
               >
                 View Articles
               </Link>

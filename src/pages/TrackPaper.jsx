@@ -48,23 +48,23 @@ const TrackPaper = () => {
 
   return (
     <section className="h-screen m-5 flex justify-center items-center flex-col">
-      <div className="conatiner mx-auto flex justify-center items-center card-gradient w-full md:w-1/2 rounded-lg">
+      <div className="conatiner mx-auto flex justify-center items-center custom-shadow w-full md:w-1/2 rounded-lg">
         <div className="flex flex-col w-full m-6">
-          <h1 className="text-3xl font-bold text-center">
+          <h1 className="text-3xl font-bold text-center text-primary mb-4">
             Track your article's status
           </h1>
           <input
             type="text"
             required
-            className="input"
+            className="w-full md:w-3/4 self-center grow shrink-0 rounded px-2.5 py-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
             placeholder="Enter the Id sent to your email"
             value={id}
             onChange={(e) => setId(e.target.value)}
           />
           <button
             onClick={handleTrackClick}
-            className={`p-2 mt-8 rounded-full ${
-              isLoading ? "bg-gray-500" : "bg-secondary hover:bg-primary"
+            className={`w-1/2 self-center p-2 mt-8 rounded-full ${
+              isLoading ? "bg-gray-500" : "bg-primary hover:bg-blue9"
             }`}
             disabled={isLoading}
           >
@@ -77,7 +77,7 @@ const TrackPaper = () => {
           ) : null}
         </div>
       </div>
-      <div className="my-10 flex justify-center items-center card-gradient w-full md:w-3/4 rounded-lg">
+      <div className="my-10 flex justify-center items-center custom-shadow w-full md:w-3/4 rounded-lg">
         <div className="flex flex-col w-full p-4">
           <h2 className="text-2xl font-semibold mb-4">Progress Bar</h2>
 
@@ -104,7 +104,7 @@ const TrackPaper = () => {
             <span className="text-purple-900 text-center opacity-90 mx-1">
               Published
             </span>
-            <span className="hidden md:block text-white text-center opacity-90 mx-1">
+            <span className="hidden md:block text-green-500 text-center opacity-90 mx-1">
               Certified
             </span>
           </div>

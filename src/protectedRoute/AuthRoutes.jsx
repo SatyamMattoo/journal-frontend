@@ -8,7 +8,7 @@ const AuthRoutes = ({ element, role }) => {
 
   // Check if the user is authenticated and has the required role
   if (!isAuthenticated || userRole !== role) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/auth" />;
   }
 
   // Render the route component if the user is authenticated with the required role

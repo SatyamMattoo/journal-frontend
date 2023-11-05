@@ -34,7 +34,7 @@ const DeleteAnnouncement = ({ isOpen, onClose, id, refresh }) => {
       </h2>
       <button
         onClick={handleDelete}
-        className="p-4 bg-secondary hover:bg-primary m-2 rounded-lg"
+        className="p-4 bg-primary hover:blue9 m-2 rounded-lg"
       >
         {isLoading ? "Deleting..." : "Delete"}
       </button>

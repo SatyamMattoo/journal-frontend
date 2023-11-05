@@ -8,7 +8,7 @@ const ProtectedRoute = ({ element }) => {
 
   // Check if the user is authenticated and has the required role
   if (!isAuthenticated) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/auth" />;
   }
 
   // Render the route component if the user is authenticated with the required role
