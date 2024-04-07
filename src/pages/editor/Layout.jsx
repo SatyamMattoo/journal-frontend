@@ -1,7 +1,7 @@
 // layouts/EditorLayout.jsx
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Sidebar from "./SIdebar";
+import Sidebar from "./Sidebar";
 
 const EditorLayout = () => {
   return (
