@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const articleApi = createApi({
   reducerPath: "articleApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:3000/api/v1",
+    baseUrl: import.meta.env.VITE_BACKEND_URL,
   }),
   endpoints: (builder) => ({
     //Published Articles
