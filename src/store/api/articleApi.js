@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const articleApi = createApi({
   reducerPath: "articleApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://ejournal.onrender.com/api/v1",
+    baseUrl: "http://localhost:3000/api/v1",
   }),
   endpoints: (builder) => ({
     //Published Articles
@@ -41,7 +41,7 @@ export const articleApi = createApi({
       query: (data) => {
         return {
           method: "POST",
-          url: `/articles/track`,
+          url: "/articles/track",
           body: data,
           credentials: "include",
         };
@@ -53,6 +53,14 @@ export const articleApi = createApi({
       query: () => {
         return {
           url: "/articles/admin/submitted",
+          credentials: "include",
+        };
+      },
+    }),
+    getUnderreviewArticles: builder.query({
+      query: () => {
+        return {
+          url: "/articles/admin/underreview",
           credentials: "include",
         };
       },
@@ -89,6 +97,14 @@ export const articleApi = createApi({
       query: () => {
         return {
           url: "/articles/editor/assigned",
+          credentials: "include",
+        };
+      },
+    }),
+    getPreviousArticles: builder.query({
+      query: () => {
+        return {
+          url: "/articles/editor/previous",
           credentials: "include",
         };
       },
@@ -150,11 +166,13 @@ export const {
   useGetArticleProgressMutation,
   //Admin
   useGetSubmittedArticlesQuery,
+  useGetUnderreviewArticlesQuery,
   useGetReadyToPublishArticlesQuery,
   useAssignArticleMutation,
   usePublishArticleMutation,
   //Editor
   useGetAssignedArticlesQuery,
+  useGetPreviousArticlesQuery,
   useSendArticleToAdminMutation,
   useSendForResubmissionMutation,
   //Announcements

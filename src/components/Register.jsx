@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useRegisterMutation } from "../store/api/authApi";
-import Loader from "./Loader";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../store/state/auth";
-import Cookies from "js-cookie";
 import toast from "react-hot-toast";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { setUser } from "../store/state/auth";
+import { useRegisterMutation } from "../store/api/authApi";
 
 const Register = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -17,11 +16,6 @@ const Register = () => {
     password: "",
     department: "",
   });
-
-  let route;
-  if (userRole == "user") route = "/";
-  if (userRole == "admin") route = "/admin";
-  if (userRole == "editor") route = "/editor";
 
   const [register, { isLoading, isError, error }] = useRegisterMutation();
   const dispatch = useDispatch();
@@ -54,10 +48,22 @@ const Register = () => {
     }
   };
 
-  if (isAuthenticated) {
-    return <Navigate to="/" />;
-  }
+  const getUserRedirectRoute = (role) => {
+    switch (role) {
+      case "user":
+        return "/";
+      case "admin":
+        return "/admin/unassigned-articles";
+      case "editor":
+        return "/editor";
+      default:
+        return "/";
+    }
+  };
 
+  if (isAuthenticated) {
+    return <Navigate to={getUserRedirectRoute(userRole)} />;
+  }
   return (
     <form onSubmit={handleSubmit} method="POST">
       <p className="mb-5 text-mauve11 text-[15px] leading-normal">
@@ -71,7 +77,7 @@ const Register = () => {
           Name
         </label>
         <input
-          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           name="name"
           type="text"
           placeholder="Enter Your Name"
@@ -88,7 +94,7 @@ const Register = () => {
           Email
         </label>
         <input
-          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           type="email"
           name="email"
           placeholder="Enter Your Email"
@@ -105,7 +111,7 @@ const Register = () => {
           Department
         </label>
         <input
-          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           type="text"
           name="department"
           placeholder="Enter Your Department"
@@ -122,7 +128,7 @@ const Register = () => {
           Password
         </label>
         <input
-          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+          className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
           type="password"
           name="password"
           placeholder="Enter Your Password"

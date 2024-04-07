@@ -1,21 +1,20 @@
 import React from "react";
-import Sidebar from "./Sidebar";
-import logo from "../assets/logo.png";
+import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <header className="h-30 bg-gray-100 sticky top-0 z-20">
+    <header className="h-30 bg-primary/90 backdrop-filter backdrop-blur-lg sticky top-0 z-10">
       <div className="container w-screen mx-auto h-full flex flex-col items-center justify-center p-2">
-        <div className="flex justify-center items-center">
-          <img
-            src={logo}
-            alt="Himachal Pradesh University"
-            className="w-40 h-20 object-cover mx-10"
-          />
-          <h1 className="text-2xl text-blue-400">Publish your articles with this E-Journal website</h1>
+        <div className="flex justify-center items-center flex-col text-white">
+        <img
+          src="https://hpuniv.ac.in/images-html/logonews.png"
+          alt="Himachal Pradesh University"
+        />
+          <h1 className="text-2xl text-blue-40">International Center for Distance Edu. and Open Learning</h1>
+          <p className="text-lg text-blue-40">(A State Government University Accredited with 'A' grade by NAAC)</p>
         </div>
       </div>
-      <Sidebar />
+      <Navbar />
     </header>
   );
 };

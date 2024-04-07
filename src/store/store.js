@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import authReducer from "./state/auth";
-import { authApi } from "./api/authApi";
 import articleReducer from "./state/article";
+import { authApi } from "./api/authApi";
 import { articleApi } from "./api/articleApi";
 
 export const store = configureStore({
@@ -14,4 +15,3 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(authApi.middleware, articleApi.middleware),
 });
-

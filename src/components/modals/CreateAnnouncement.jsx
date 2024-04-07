@@ -1,29 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import toast from "react-hot-toast";
-import Modal from "react-modal";
-import { useCreateAnnouncementMutation } from "../../store/api/articleApi";
+import * as Dialog from "@radix-ui/react-dialog";
 
-const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
+import { useCreateAnnouncementMutation } from "../../store/api/articleApi";
+import { FaWindowClose } from "react-icons/fa";
+
+const CreateAnnouncement = ({ isOpen, setIsOpen, onClose, refresh }) => {
+  const [formData, setFormData] = React.useState({
+    title: "",
+    description: "",
+    link: "",
+  });
   const [createAnnouncement, { isLoading }] = useCreateAnnouncementMutation();
 
-  const handleCreate = async () => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleCreate = async (e) => {
+    e.preventDefault();
     try {
       const newAnnouncement = {
-        title,
-        description,
-        url,
+        title: formData.title,
+        description: formData.description,
+        url: formData.link,
       };
+      console.log(newAnnouncement);
 
       const response = await createAnnouncement(newAnnouncement);
 
       if (response.data) {
         toast.success("Announcement Created Successfully");
-        setTitle("");
-        setDescription("");
-
+        setFormData({ title: "", description: "", link: "" });
         refresh();
         onClose();
       } else {
@@ -34,64 +43,91 @@ const CreateAnnouncement = ({ onClose, isOpen, refresh }) => {
       console.error("Error creating editor:", error);
     }
   };
+
   return (
-    <Modal
-      isOpen={isOpen}
-      onRequestClose={onClose}
-      className="bg-secondary bg-opacity-70 w-full min-h-screen z-40 flex flex-col items-center justify-center"
-    >
-      <div className="flex -wull">
-        <div className="flex flex-col justify-center p-2 items-center w-full gap-4">
-          <h2 className="text-3xl font-body">Create New Announcement</h2>
-          <div className="flex justify-start items-center w-full">
-            <input
-              required
-              type="text"
-              className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
-              placeholder="Enter Announcement Title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </div>
-          <div className="flex justify-start items-center w-full">
-            <input
-              type="text"
-              className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
-              placeholder="Enter a link if needed"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-            />
-          </div>
-          <div className="flex justify-start items-center w-full">
-            <textarea
-              required
-              rows={3}
-              type="email"
-              className="grow p-2 shrink-0 rounded text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
-              placeholder="Enter Announcement Description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-          </div>
-          <div className="flex">
-            {" "}
-            <button
-              className="p-3 bg-primary hover:bg-blue9 m-2 rounded-full"
-              onClick={handleCreate}
-              disabled={isLoading}
-            >
-              {isLoading ? "Creating..." : "Create"}
-            </button>
-            <button
-              className="p-3 bg-secondary hover:bg-red-400 m-2 rounded-full"
-              onClick={onClose}
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </div>
-    </Modal>
+    <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog.Portal>
+        <Dialog.Overlay className="bg-blackA6 data-[state=open]:animate-overlayShow fixed inset-0 overflow-scroll no-scrollbar" />
+        <Dialog.Content className="data-[state=open]:animate-contentShow fixed top-[50%] left-[50%] max-h-[80vh] overflow-scroll no-scrollbar w-[90vw] max-w-[400px] translate-x-[-50%] translate-y-[-50%] rounded-[6px] bg-white p-[25px] shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] focus:outline-none z-30">
+          <Dialog.Title className="text-mauve12 m-0 text-[17px] font-medium">
+            Enter the announcement details.
+          </Dialog.Title>
+          <Dialog.Description className="text-mauve11 mt-[10px] text-[15px] leading-normal mb-4">
+            Enter the following details in order to create a new announcement
+          </Dialog.Description>
+          <form onSubmit={handleCreate}>
+            <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+              <label
+                className="text-[13px] leading-none mb-2.5 text-blue12 block"
+                htmlFor="title"
+              >
+                Title*
+              </label>
+              <input
+                className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+                type="text"
+                name="title"
+                placeholder="Enter the title"
+                value={formData.title}
+                onChange={handleChange}
+                required
+              />
+            </fieldset>
+            <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+              <label
+                className="text-[13px] leading-none mb-2.5 text-blue12 block"
+                htmlFor="description"
+              >
+                Description*
+              </label>
+              <textarea
+                className="grow shrink-0 p-2 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+                type="text"
+                rows={3}
+                name="description"
+                placeholder="Enter the description"
+                value={formData.description}
+                onChange={handleChange}
+                required
+              />
+            </fieldset>
+            <fieldset className="mb-[15px] w-full flex flex-col justify-start">
+              <label
+                className="text-[13px] leading-none mb-2.5 text-blue12 block"
+                htmlFor="link"
+              >
+                Link
+              </label>
+              <input
+                className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+                type="text"
+                name="link"
+                placeholder="Enter the link"
+                value={formData.link}
+                onChange={handleChange}
+              />
+            </fieldset>
+            <fieldset className="flex justify-end">
+              <button
+                className="bg-primary text-white hover:bg-blue9 disabled:bg-gray-400 focus:shadow-blue7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none"
+                type="submit"
+                disabled={isLoading}
+              >
+                {isLoading ? "Creating..." : "Create"}
+              </button>
+            </fieldset>
+          </form>
+          <Dialog.Close
+            asChild
+            type="button"
+            onClick={onClose}
+            className="text-primary hover:bg-blue3 focus:shadow-blue7 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none cursor-pointer"
+          >
+            <FaWindowClose />
+          </Dialog.Close>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog.Root>
   );
 };
 

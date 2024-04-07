@@ -6,7 +6,7 @@ import Cookies from "js-cookie";
 import { clearUser } from "../store/state/auth";
 import toast from "react-hot-toast";
 
-const Sidebar = () => {
+const Navbar = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const role = useSelector((state) => state.auth.user.role);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,7 +19,7 @@ const Sidebar = () => {
   }, []);
 
   const dispatch = useDispatch();
-  const [logout, { data, isError, isLoading, error }] = useLogoutMutation();
+  const [logout] = useLogoutMutation();
 
   const handleLogout = async () => {
     try {
@@ -45,11 +45,11 @@ const Sidebar = () => {
   };
 
   return (
-    <nav className="sticky top-30  bg-gradient-to-br from-primary to-secondary md:w-full md:flex z-0">
+    <nav className="sticky top-30 md:w-full md:flex z-0 border-y">
       <div className="md:hidden">
         <button
           onClick={() => toggleSidebar()}
-          className=" menu-button top-30 z-30 bg-primary text-white p-2 rounded-md"
+          className=" menu-button top-30 z-30 text-white p-2 rounded-md"
         >
           <div className="flex flex-col">
             <div className="w-4 h-1 m-1 bg-white"></div>
@@ -65,15 +65,15 @@ const Sidebar = () => {
         <Link
           to="/"
           onClick={() => toggleSidebar()}
-          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
           Home
         </Link>
         {isAuthenticated && role === "admin" && (
           <Link
-            to="/admin"
+            to="/admin/unassigned-articles"
             onClick={() => toggleSidebar()}
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Dashboard
           </Link>
@@ -81,8 +81,8 @@ const Sidebar = () => {
         {isAuthenticated && role === "editor" && (
           <Link
             onClick={() => toggleSidebar()}
-            to="/admin"
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            to="/editor/assigned-articles"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Dashboard
           </Link>
@@ -90,22 +90,22 @@ const Sidebar = () => {
         <Link
           onClick={() => toggleSidebar()}
           to="/archives"
-          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
           Archives
         </Link>
         <Link
           onClick={() => toggleSidebar()}
           to="/editorialboard"
-          className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+          className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
-          Editorial Board
+          Reviewer Board
         </Link>
         {isAuthenticated && (
           <Link
             onClick={() => toggleSidebar()}
             to="/submission"
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Submissions
           </Link>
@@ -114,7 +114,7 @@ const Sidebar = () => {
           <Link
             onClick={() => toggleSidebar()}
             to="/track"
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Track Papers
           </Link>
@@ -124,7 +124,7 @@ const Sidebar = () => {
           <Link
             onClick={() => toggleSidebar()}
             to="/auth"
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Login/Register
           </Link>
@@ -132,7 +132,7 @@ const Sidebar = () => {
         {isAuthenticated && (
           <button
             onClick={handleLogout}
-            className="bg-secondary text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
+            className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
           >
             Logout
           </button>
@@ -142,4 +142,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

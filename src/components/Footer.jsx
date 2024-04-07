@@ -1,80 +1,78 @@
 import React from "react";
-import { FaGithubSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
-import Logo from "../assets/logo.png";
+import {
+  FaFacebookSquare,
+  FaTwitterSquare,
+  FaYoutubeSquare,
+} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 p-2">
+    <footer className="bg-primary/50 p-2">
       <div className="container mx-auto flex ">
         <div className="flex items-center justify-between text-xs w-full">
           <div className="logo md:hidden mx-4">
-            <img src={Logo} alt="logo" width={60} height={60} />
+            <img src="/assets/logo.png" alt="logo" width={60} height={60} />
           </div>
           <div className="address hidden md:flex items-center">
             <div className="logo mx-4">
-              <img src={Logo} alt="logo" width={70} />
+              <img src="/assets/logo.png" alt="logo" width={70} />
             </div>
-            <p className="text-gray-600">
-              E-journal App, By Satyam Mattoo
+            <p  className="text-white">
+              <a href="https://goo.gl/maps/m5rC3cKV5xbANStU7" target="_blank">
+                Himachal Pradesh University,
+              </a>
+              Summer Hill, Shimla
               <br />
-              Full Stack Developer
+              171005
             </p>
           </div>
-          <div className="contact flex flex-col items-start">
-            <h2 className="font-semibold text-[14px] mb-1 text-gray-600 ">
-              Contacts
-            </h2>
+          <div className="contact flex flex-col items-start text-white">
+            <h2 className="font-semibold text-[14px] mb-1 ">Contacts</h2>
             <div className="flex">
-              <div className="flex flex-col justify-center items-start text-gray-600">
-                <p className="text-gray-600">🕿 +91 7876740985</p>
-                <p className="text-gray-600">
+              <div className="w-[1px] self-center mr-2 h-12 bg-white"></div>
+              <div className="flex flex-col">
+                <p>🕿 0177 283 3555</p>
+                <p>
                   <a href="mailto:vc@hpuniv.ac.in" target="_blank">
-                    ✉ satyammattoo2003@gmail.com
+                    ✉ vc@hpuniv.ac.in
                   </a>
                 </p>
                 <a href="mailto:vc_hpu@hotmail.com" target="_blank">
-                  ✉ ejournalmattoo@gmail.com
+                  ✉ vc_hpu@hotmail.com
                 </a>
               </div>
             </div>
           </div>
-          <div className="socials flex flex-col items-start">
-            <h2 className="font-semibold text-[14px] mb-1 text-gray-600">
-              Socails
-            </h2>
+          <div className="socials flex flex-col items-start text-white">
+            <h2 className="font-semibold text-[14px] mb-1">Socails</h2>
             <div className="flex">
+              <div className="w-[1px] self-center mr-2 h-12 bg-white"></div>
               <div className="flex flex-col">
                 <div className="facebook flex items-center ">
-                  <FaLinkedin className="bg-blue9" />
+                  <FaFacebookSquare />
                   <a
-                    href="www.linkedin.com/in/satyam-mattoo"
-                    className="mx-1 text-gray-600"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="https://www.facebook.com/HpuNewShimla"
+                    className="mx-1"
                   >
-                    LinkedIn
+                    Facebook
                   </a>
                 </div>
                 <div className="twitter flex items-center ">
-                  <FaTwitterSquare className="bg-blue9" />
+                  <FaTwitterSquare />
                   <a
-                    href="https://twitter.com/SatyamMattoo07"
-                    className="mx-1 text-gray-600"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="https://twitter.com/hpu_shimla?t=lRks6KUPBVeBjXTZgzNs_Q&s=08"
+                    className="mx-1"
                   >
                     Twitter
                   </a>
                 </div>
                 <div className="youtube flex items-center">
-                  <FaGithubSquare className="bg-blue9" />
+                  <FaYoutubeSquare />
                   <a
-                    href="https://github.com/SatyamMattoo"
-                    className="mx-1 text-gray-600"
-                    target="_blank"
-                    rel="noreferrer"
+                    href="https://www.youtube.com/channel/UCMvQSn0FkUKJIqKggNsbopw"
+                    className="mx-1"
                   >
-                    GitHub
+                    Youtube
                   </a>
                 </div>
               </div>

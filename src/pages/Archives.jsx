@@ -1,11 +1,14 @@
 import React from "react";
-import Card from "../utils/Card";
+import { MdOutlineArticle } from "react-icons/md";
+
+import Table from "../components/Table";
+import { archivesColumns } from "../utils/columns";
 import { useGetPublishedArticlesQuery } from "../store/api/articleApi";
-import Loader from "../components/Loader";
+import TableSkeleton from "../components/TableSkeleton";
 
 const Archives = () => {
-  // Articles
-  const { data, error, isLoading, isSuccess } = useGetPublishedArticlesQuery();
+  const { data, isError, isLoading, isSuccess } =
+    useGetPublishedArticlesQuery();
 
   let articles = [],
     sortedArticles = [];
@@ -16,40 +19,27 @@ const Archives = () => {
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
   }
+
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <section className="min-h-screen m-5">
-          <div className="flex flex-col my-4">
-            <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
-            <h1 className="text-center text-primary text-3xl">Articles</h1>
-            <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
-            <div className="flex flex-wrap m-2">
-              {sortedArticles.length > 0 ? (
-                sortedArticles.map((item, index) => {
-                  return (
-                    <Card
-                      key={index}
-                      heading={item.title}
-                      description={item.description}
-                      author={item.author ? item.author.name : "Anonymous"}
-                      date={item.createdAt}
-                      url={item.pdfFile}
-                    />
-                  );
-                })
-              ) : (
-                <div className="p-4 m-2 custom-shadow">
-                  <h1 className="text-3xl text-gray-600">No Articles Published.</h1>
-                </div>
-              )}
-            </div>
-          </div>
-        </section>
-      )}
-    </>
+    <section className="min-h-screen m-5">
+      <div className="flex flex-col my-4">
+        <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
+        <h1 className="text-center text-tertiary font-semibold text-3xl flex justify-center items-center gap-3">
+          <MdOutlineArticle />
+          Articles
+        </h1>
+        <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
+        {isLoading ? (
+          <TableSkeleton />
+        ) : (
+          <Table
+            tableData={sortedArticles}
+            columns={archivesColumns}
+            emptyMessage="No articles published."
+          />
+        )}
+      </div>
+    </section>
   );
 };
 

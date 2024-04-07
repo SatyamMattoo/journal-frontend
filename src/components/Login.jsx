@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import Loader from "../components/Loader";
-import { useLoginMutation } from "../store/api/authApi";
-import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../store/state/auth";
 import toast from "react-hot-toast";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { useLoginMutation } from "../store/api/authApi";
+import { setUser } from "../store/state/auth";
 
 const Login = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -18,11 +18,6 @@ const Login = () => {
   const [login, { isLoading, isError, error }] = useLoginMutation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  let route;
-  if (userRole == "user") route = "/";
-  if (userRole == "admin") route = "/admin";
-  if (userRole == "editor") route = "/editor";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,11 +46,23 @@ const Login = () => {
     }
   };
 
+  const getUserRedirectRoute = (role) => {
+    switch (role) {
+      case "user":
+        return "/";
+      case "admin":
+        return "/admin/unassigned-articles";
+      case "editor":
+        return "/editor/assigned-articles";
+      default:
+        return "/";
+    }
+  };
+
   if (isAuthenticated) {
-    return <Navigate to={route ? route : "/"} />;
+    return <Navigate to={getUserRedirectRoute(userRole)} />;
   }
   return (
-    <>
       <form onSubmit={handleSubmit} method="POST">
         <p className="mb-5 text-mauve11 text-[15px] leading-normal">
           Enter your details to Register.
@@ -68,7 +75,7 @@ const Login = () => {
             Email
           </label>
           <input
-            className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+            className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
             type="email"
             name="email"
             placeholder="Enter Your Email"
@@ -79,13 +86,13 @@ const Login = () => {
         </fieldset>
         <fieldset className="mb-[15px] w-full flex flex-col justify-start">
           <label
-            className="text-[13px] leading-none mb-2.5 text-blue12 block"
+            className="text-[13px] leading-none mb-2.5 block text-blue12"
             htmlFor="password"
           >
             Password
           </label>
           <input
-            className="grow shrink-0 rounded px-2.5 text-[15px] leading-none text-blue11 shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
+            className="grow shrink-0 rounded px-2.5 text-[15px] leading-none shadow-[0_0_0_1px] shadow-blue7 h-[35px] focus:shadow-[0_0_0_2px] focus:shadow-blue8 outline-none"
             type="password"
             name="password"
             placeholder="Enter Your Password"
@@ -104,8 +111,8 @@ const Login = () => {
           </button>
           {isError && (
             <div>
-              <span className="text-red-500">Error: </span>
-              {error.data.message}
+              <span className="text-red-500">Error: {error.data.message}</span>
+              
             </div>
           )}
           <div className="flex">
@@ -113,7 +120,6 @@ const Login = () => {
           </div>
         </div>
       </form>
-    </>
   );
 };
 
