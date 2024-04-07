@@ -9,12 +9,10 @@ const PreviousArticles = () => {
   const [sortedArticles, setSortedArticles] = React.useState([]);
 
   const { data, isSuccess, isLoading } = useGetPreviousArticlesQuery();
-  console.log(data);
 
   React.useEffect(() => {
     if (isSuccess) {
       const unsortedArticles = data.previousArticles || [];
-      console.log(unsortedArticles);
       const sorted = [...unsortedArticles].sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );

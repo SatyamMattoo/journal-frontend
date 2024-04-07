@@ -7,10 +7,9 @@ import TableSkeleton from "../components/TableSkeleton";
 import { useGetEditorsQuery } from "../store/api/articleApi";
 
 const EditorialBorad = () => {
-  const { data, isLoading } = useGetEditorsQuery();
-  const { editors } = data || [];
+  const { data, isLoading, error } = useGetEditorsQuery();
+  const editors = data?.editors || [];
 
-  console.log(editors);
   return (
     <section className="min-h-screen m-5">
       <div className="flex flex-col my-4">
@@ -26,9 +25,9 @@ const EditorialBorad = () => {
           ) : (
             <Table
               columns={editorsColumns}
-              emptyMessage="No editors found."
               tableData={editors}
               bottomView={false}
+              emptyMessage="No editors found."
             />
           )}
         </div>

@@ -26,7 +26,6 @@ const CreateAnnouncement = ({ isOpen, setIsOpen, onClose, refresh }) => {
         description: formData.description,
         url: formData.link,
       };
-      console.log(newAnnouncement);
 
       const response = await createAnnouncement(newAnnouncement);
 

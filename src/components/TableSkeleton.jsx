@@ -6,16 +6,15 @@ function TableSkeleton() {
     <div className="p-4 w-full rounded-lg overflow-scroll scroll-smooth no-scrollbar">
       <div className="h-2" />
       {/* Header */}
-      <table className="w-full border-collapse rounded-lg h-[30vh] overflow-hidden">
+      <div className="w-full border-collapse rounded-lg h-[30vh] overflow-hidden">
         <div className="bg-gray-300 text-white m-4 p-4 rounded-xl">
           {/* Table Header */}
-          <tr>
-            {/* Table Headers */}
-            <th className="p-2">{/* Table Header Content */}</th>
-            {/* Repeat for each column */}
-          </tr>
         </div>
-      </table>
+        {/* Table Headers */}
+        <div className="bg-gray-300 m-4 p-4 h-full rounded-xl">
+          {/* Table Header Content */}
+        </div>
+      </div>
       {/* Pagination */}
       <div className="h-2" />
       <div className="flex flex-col md:flex-row items-center justify-between">

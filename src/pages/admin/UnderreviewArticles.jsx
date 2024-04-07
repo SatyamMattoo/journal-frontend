@@ -12,7 +12,6 @@ const UnderreviewArticles = () => {
   React.useEffect(() => {
     if (isSuccess) {
       const unsortedArticles = data.articles || [];
-      console.log(unsortedArticles);
       const sorted = [...unsortedArticles].sort(
         (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
       );
