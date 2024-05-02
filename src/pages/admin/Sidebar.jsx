@@ -31,10 +31,10 @@ const Sidebar = () => {
           </SidebarLink>
           <SidebarLink
             to="/admin/underreview-articles"
-            active={location.pathname === "/admin/undereview-articles"}
+            active={location.pathname === "/admin/underreview-articles"}
           >
             <FaEnvelopeOpen />
-            Articles under Review
+            Articles Under Review
           </SidebarLink>
           <SidebarLink
             to="/admin/reviewed-articles"

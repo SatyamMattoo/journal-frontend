@@ -16,7 +16,7 @@ const EditorialBorad = () => {
         <div className="h-1 w-1/2 self-start mx-8 my-4 bg-gradient-to-r from-primary via-blue-200 to-transparent"></div>
         <h1 className="text-center text-tertiary font-semibold text-3xl flex justify-center items-center gap-3">
           <IoPersonOutline />
-          Board of Reviewers
+          Board of Editors
         </h1>
         <div className="w-1/2 h-1 mx-8 my-4 self-end bg-gradient-to-r from-transparent via-blue-200 to-primary"></div>
         <div className="flex flex-wrap m-2">

@@ -48,11 +48,13 @@ const AssignedArticles = () => {
       accessorKey: "name",
       header: "Author Name",
       cell: (info) => info.row.original.author.name || "",
+      accessorFn: (data) => data.author.name,
     },
     {
       accessorKey: "email",
       header: "Author Email",
       cell: (info) => info.row.original.author.email || "",
+      accessorFn: (data) => data.author.email,
     },
     {
       accessorKey: "createdAt",

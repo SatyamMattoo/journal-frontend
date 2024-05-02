@@ -30,16 +30,19 @@ const UnderreviewArticles = () => {
       accessorKey: "authorEmail",
       header: () => "Author Email",
       cell: (info) => info.row.original.author.email || "",
+      accessorFn: (data) => data.author.email,
     },
     {
       accessorKey: "editorName",
       header: () => "Editor Name",
       cell: (info) => info.row.original.editor.name || "",
+      accessorFn: (data) => data.editor.name,
     },
     {
       accessorKey: "editorEmail",
       header: () => "Editor Email",
       cell: (info) => info.row.original.editor.email || "",
+      accessorFn: (data) => data.editor.email,
     },
     {
       accessorKey: "status",

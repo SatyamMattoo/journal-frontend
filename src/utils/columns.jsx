@@ -17,11 +17,13 @@ export const archivesColumns = [
   },
   {
     accessorKey: "name",
+    accessorFn: (data) => data.author.name,
     header: () => "Author Name",
     cell: (info) => info.row.original.author.name || "",
   },
   {
     accessorKey: "email",
+    accessorFn: (data) => data.author.email,
     header: () => "Author Email",
     cell: (info) => info.row.original.author.email || "",
   },

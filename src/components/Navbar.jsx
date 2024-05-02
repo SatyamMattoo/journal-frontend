@@ -99,7 +99,7 @@ const Navbar = () => {
           to="/editorialboard"
           className="text-white p-2 h-full flex justify-center items-center w-full text-center transition-all ease-in-out duration-500 hover:bg-primary cursor-pointer"
         >
-          Reviewer Board
+          Editorial Board
         </Link>
         {isAuthenticated && (
           <Link

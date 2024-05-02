@@ -224,14 +224,27 @@ const AboutSection = () => (
     <div className="custom-shadow md:m-6 rounded-lg p-10">
       <h1 className="text-2xl my-2 text-primary">HPU E-Journal</h1>
       <p className="text-lg text-mauve10">
-        Our eJournal website simplifies academic publishing. Users can easily
-        upload articles, track submissions, and access research papers on our
-        user-friendly platform. Automated issue and volume updates keep content
-        fresh, fostering a dynamic academic environment.
+        The Shimla Journal of Multidisciplinary Research is an open access and
+        peer reviewed bi-annual online journal that provides an academic
+        platform to comment on concerns in the field of humanities and social
+        sciences.
         <br />
-        Users benefit from a seamless experience, with easy login, submission
-        tracking, and access to a wealth of academic content. Our platform
-        ensures efficient knowledge sharing and scholarly collaboration.
+        <br />
+        The journal seeks to promote contemporary multi-disciplinary research in
+        the fields of Language and Literature, Social Sciences, Commerce,
+        Economics, Education, English, Geography, History, Law, Library &
+        Information Science, Linguistics, Literary studies, Management Studies,
+        Music & Fine Arts, Philosophy, Political Science, Psychology, Sociology,
+        Women Studies and a variety of other areas covering a wide range of
+        issues, and contemporary perspectives promoting multidisciplinary
+        research and readership.
+        <br />
+        <br />
+        It aims to publish theoretical and empirical research, and book reviews
+        with occasional special issues. For submission of research articles and
+        for any other queries regarding the journal please mail to
+        shimlajournal2020@gmail.com
+        <br />
       </p>
     </div>
   </div>
